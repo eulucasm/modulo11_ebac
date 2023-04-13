@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Jokenpo.app</string>
+    <string name="botao">Botão</string>
+    <string name="seconde_screen_title">Segunda tela</string>
+    <string name="manu_save_title">Save</string>
+    <string name="menu_settings_title">Configurações</string>
+    <string name="drawer_home_title">Home</string>
+    <string name="botton_nav_title_1">Opção 1</string>
+    <string name="botton_nav_title_2">Opção 2</string>
 </resources>
