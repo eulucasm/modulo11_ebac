@@ -3,12 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_save"
-        android:title="@string/manu_save_title"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_save"/>
-    <item
-        android:id="@+id/menu_setings"
+        android:id="@+id/homeFragment"
         android:title="@string/menu_settings_title"
         app:showAsAction="never"
         />
