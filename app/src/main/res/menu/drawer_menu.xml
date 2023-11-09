@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"
-        android:title="@string/drawer_home_title"/>
+        android:id="@+id/playerFragment"
+        android:title="@string/player_title_menu"
+        android:icon="@drawable/ic_avatar"
+        />
+
+    <item
+        android:id="@+id/resultFragment"
+        android:title="@string/result_title_menu"
+        android:icon="@drawable/ic_resultado"
+        />
+
 </menu>

@@ -11,12 +11,12 @@
         android:label="Jokenpo"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_game_nav2"
-            app:destination="@id/game_nav"
+            android:id="@+id/action_homeFragment_to_game_nav"
+            app:destination="@id/navigation"
             app:popUpTo="@id/jokenpo_nav" />
     </fragment>
 
-    <navigation android:id="@+id/game_nav"
+    <navigation android:id="@+id/navigation"
         app:startDestination="@id/playerFragment">
         <fragment
             android:id="@+id/playerFragment"

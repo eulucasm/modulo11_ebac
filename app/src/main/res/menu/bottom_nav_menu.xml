@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/playerFragment"
-        android:title="@string/botton_nav_title_1"
+        android:title="@string/player_title_menu"
         android:icon="@drawable/ic_avatar"/>
     <item
         android:id="@+id/resultFragment"
-        android:title="@string/botton_nav_title_2"
+        android:title="@string/result_title_menu"
         android:icon="@drawable/ic_option2"/>
 </menu>
