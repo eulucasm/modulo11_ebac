@@ -8,7 +8,6 @@ import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -18,10 +17,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import com.omelhordobrasil.kotlinbr.tamojunto.lucao.jokenpoapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var bindingMain: ActivityMainBinding
     private lateinit var drawer: DrawerLayout
     private lateinit var navDrawer: NavigationView
@@ -36,12 +34,8 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         val toolbarMain = bindingMain.toolbar
 
-//        Log.d("Lifecycle", "onCreate")
-
         setContentView(bindingMain.root)
         setSupportActionBar(toolbarMain)
-
-
 
         drawer = bindingMain.root
         navDrawer = bindingMain.navView
@@ -71,13 +65,14 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navDrawer.setupWithNavController(navController)
-        navDrawer.setNavigationItemSelectedListener{
-            when(it.itemId){
+        navDrawer.setNavigationItemSelectedListener {
+            when (it.itemId) {
                 R.id.resultFragment -> {
                     val args = Bundle()
                     args.putString("currentPlay", currentPlay)
                     navController.navigate(it.itemId, args)
                 }
+
                 else -> navController.navigate(it.itemId)
             }
             true
@@ -85,12 +80,13 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
 
         bottomNav.setupWithNavController(navController)
         bottomNav.setOnItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.resultFragment -> {
                     val args = Bundle()
                     args.putString("currentPlay", currentPlay)
                     navController.navigate(it.itemId, args)
                 }
+
                 else -> navController.navigate(it.itemId)
             }
             true
@@ -112,11 +108,9 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
 
         Toast.makeText(this, "Jogada Selecionada: ${currentPlay.toString()}", Toast.LENGTH_SHORT)
             .show()
-
     }
 
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-    }
+    override fun onNothingSelected(p0: AdapterView<*>?) {}
 
     override fun onStart() {
         super.onStart()

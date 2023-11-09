@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.omelhordobrasil.kotlinbr.tamojunto.lucao.jokenpoapp.databinding.FragmentHomeBinding
 
+
 class HomeFragment : Fragment() {
     private lateinit var bindingHome: FragmentHomeBinding
     private lateinit var editText: EditText
@@ -23,7 +24,7 @@ class HomeFragment : Fragment() {
         bindingHome = FragmentHomeBinding.inflate(inflater, container, false)
         editText = bindingHome.editText
 
-        if(savedInstanceState?.containsKey("editTextValue") == true){
+        if (savedInstanceState?.containsKey("editTextValue") == true) {
             val value = savedInstanceState.getString("editTextValue")
             editText.setText(value)
         }

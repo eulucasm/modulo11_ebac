@@ -26,32 +26,28 @@ class ResultFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         resultBinding = FragmentResultBinding.inflate(inflater, container, false)
         engine = JokenpoEngine(resources.getStringArray(R.array.available_plays_array))
 
         val currentPlay = arguments?.getString("currentPlay")
         resultText = resultBinding.txtJogadorVencedor
 
-
         currentPlay?.let {
             updateResultText(currentPlay)
         }
 
-
-        // Inflate the layout for this fragment
         setHasOptionsMenu(true)
         root = resultBinding.root
 
-        //Observador do ciclo de vida dessa Fragment
         lifecycle.addObserver(CustomObserver())
         return root
     }
 
-    private fun updateResultText(currentPlay: String){
+    private fun updateResultText(currentPlay: String) {
         val resultGame = engine.calculateResult(currentPlay)
 
-        resultText.text = when(resultGame){
+        resultText.text = when (resultGame) {
             Result.WIN -> "Você Ganhou! :)"
             Result.LOSS -> "Você Perdeu :("
             else -> "Você Empatou."
@@ -65,11 +61,12 @@ class ResultFragment : Fragment() {
 
     @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-            R.id.homeFragment ->{
+        return when (item.itemId) {
+            R.id.homeFragment -> {
                 findNavController().navigate(R.id.homeFragment)
                 true
             }
+
             else -> false
         }
     }
